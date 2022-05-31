@@ -53,7 +53,19 @@ There are eight peripherals; valve relay, sample syringe, standard syringe, need
 
 ## Total $00.00
 
-
+### Software
+## Raspberry Pi 
+```
+Packages
+```
+## Node-Red
+```
+JavaScript code block.
+```
+## Arduino
+```
+Sketch
+```
 ## Support Websites
 
 
