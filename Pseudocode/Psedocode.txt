@@ -1,0 +1,47 @@
+//Open AutoSampler Pseudocode code
+//-------------------------------------------------------------------------
+// +++ Startup +++
+// 1. Locate and load preference.json.
+// -- GUI: Have path with timestamp
+// 2. Get current UTC time and compare with preference.json UTC time
+// -- GUI: Display Current Time with UTC Time
+// 3. Check preference.json for crash/reboot.  Ideally looking for last run complete = true
+// -- GUI: Status indicator text green background "Starting Up..."
+// 4 . If completed = false restart last step Run_Operation, else run calibration.
+// -- GUI: Status indicator text background red if crashed "Loading Last Step..."
+// -- GUI: Status indictor text background light_blue "Calibration ... "
+
+
+//-------------------------------------------------------------------------
+// +++ Calibration +++
+// 1. Verify stepper position
+// -- GUI: Highlight Which stepper is being verified; has focus outline
+// 2. Verify gas pressor
+// -- GUI: Highlight pressor gauge; has focus outline
+// 3. Verify fluid level
+// -- GUI: Use level meter *NOTE* Can we show previous level?
+// 4. Verify standard level
+// -- GUI: Use level meter *NOTE* Can we show previous level?
+// 5. Set temperature
+// -- GUI: Use level meter
+// 6. Save state to preference.json
+
+//-------------------------------------------------------------------------
+// +++ Run_Operation +++
+// 1. Locate and load run_operation.json.
+// -- GUI: Show path
+// 2. Execute step per preference.json, current step variable
+// -- GUI: Status indicator text background green display operation type; "Drawing Sample...", "Moving Sample...","Cleaning...", etc
+// -- GUI: Progress Bar of step current_step / total_steps
+// 3. Calculate step run time save to step_wait variable
+// -- GUI: Progress Bar of step current second / step_wait
+// 4. Check safety switches, and temperature.
+// -- GUI: Have an error tab list all safeties, green for go, red for stop
+// -- GUI: Display Error type message "High temperature...", "Door Open...",etc...
+// 5. Run step
+// 6. Control: steppers, valves, gas, pressor sensor, temperature
+// -- GUI: Visually show which hardware is active
+// 7. Wait for a duration from step_wait
+// -- GUI: Update Progress Bar of step current_second / step_wait
+// 8. Write completed step to preference.json
+// 9. Run next step.
