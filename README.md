@@ -5,7 +5,7 @@
 
 
 <p align="center">
-<img src="/EPA524-40mL-Volatile-Vial-Autosampler.png" width="200">
+<img src="/Images/EPA524-40mL-Volatile-Vial-Autosampler.png" width="200">
 </p>
 
 # EPA524-40mL-Volatile-Vial-Autosampler
